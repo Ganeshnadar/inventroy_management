@@ -55,8 +55,8 @@ class ProductController extends Controller
         $request->validate([
             'product_name'      =>  'required|min:3|max:255',
             'category'          =>  'uuid|exists:categories,id',
-            'product_quantity'  =>  'required',
-            'product_price'     =>  'required',
+            'product_quantity'  =>  'required|numeric',
+            'product_price'     =>  'required|numeric',
             'product_status'    =>  'required',
             'image'             =>  'required|image|max:2048'
         ]);
